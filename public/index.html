@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokasi Toko Daging Nusantara</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+    
+    <!-- Vue 3 -->
+    <script src="libs/vue.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="libs/leaflet/leaflet.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ffa726  0%, #ff6b35 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .controls {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .search-box, .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-select {
+            min-width: 150px;
+        }
+        
+        .admin-link {
+            background: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .admin-link:hover {
+            background: #218838;
+        }
+        
+        .map-container {
+            height: calc(100vh - 140px);
+            position: relative;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .popup-content {
+            max-width: 300px;
+        }
+        
+        .popup-header {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .business-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .business-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .business-category {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .business-phone {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .business-description {
+            color: #777;
+            font-size: 13px;
+            font-style: italic;
+        }
+        
+        .stats {
+            background: white;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .custom-colored-marker {
+            background: none;
+            border: none;
+        }
+        
+        .custom-colored-marker svg {
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .location-label {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        .location-label:before {
+            display: none;
+        }
+        
+        /* Re-center button styling */
+        .leaflet-control-custom {
+            border: 2px solid rgba(0,0,0,0.2);
+            background-clip: padding-box;
+        }
+        
+        .leaflet-control-custom:hover {
+            background-color: #f4f4f4;
+        }
+        
+        .leaflet-control-custom:active {
+            background-color: #e4e4e4;
+        }
+        
+        /* Position re-center button below zoom controls */
+        .leaflet-top.leaflet-left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Layer switcher styling */
+        .layer-switcher-container {
+            display: flex;
+            flex-direction: row;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .layer-button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            border-right: 1px solid #ccc;
+            transition: all 0.2s ease;
+        }
+        
+        .layer-button:last-child {
+            border-right: none;
+        }
+        
+        .layer-button:hover {
+            background-color: #f4f4f4;
+        }
+        
+        .layer-button.active {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        .layer-button.active:hover {
+            background-color: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <h1>🗺️ Toko Daging Nusantara</h1>
+            <p>Peta Lokasi Toko</p>
+        </div>
+        
+        <div class="controls">
+            <input 
+                type="text" 
+                class="search-box" 
+                placeholder="Cari nama tempat, bisnis, atau alamat..." 
+                v-model="searchQuery"
+                @input="filterLocations"
+            >
+            
+            <select class="filter-select" v-model="selectedCategory" @change="filterLocations">
+                <option value="">Semua Kategori</option>
+                <option v-for="category in categories" :key="category" :value="category">
+                    {{ category }}
+                </option>
+            </select>
+            
+            <a href="/admin" class="admin-link">Admin Panel</a>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        
+        <div class="stats">
+            Menampilkan {{ filteredLocations.length }} lokasi dari {{ totalLocations }} total lokasi
+            <span v-if="searchQuery || selectedCategory" style="color: #667eea; font-weight: bold;">
+                ({{ hasActiveFilters ? 'Filtered' : 'All' }})
+            </span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

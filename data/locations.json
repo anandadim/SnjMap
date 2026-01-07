@@ -1,0 +1,584 @@
+{
+  "locations": [
+    {
+      "id": 1767786495358,
+      "name": "TDN Cikampek",
+      "address": "Jl. Ir.H Juanda, Jomin Bar., Kec. Kota Baru, Karawang, Jawa Barat 41374",
+      "lat": -6.42058251012264,
+      "lng": 107.47344356796,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779305279_img_%25Toko%20Daging%20Nusantara%20Logo_%25940d0c3f-7b6e-45f1-86f8-5d6f8d43d4fd.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Cikampek",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Cikampek"
+        }
+      ]
+    },
+    {
+      "id": 1767786495359,
+      "name": "TDN Kopo Soreang",
+      "address": "Katapang, Bandung Regency, West Java 40921",
+      "lat": -7.0027013519731,
+      "lng": 107.552528376717,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779313329_img_%25Toko%20Daging%20Nusantara%20Logo_%25ba371110-4260-40d3-b224-a55d31aaf0c6.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Kopo Soreang",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Kopo Soreang"
+        }
+      ]
+    },
+    {
+      "id": 1767786495360,
+      "name": "TDN Purwokerto",
+      "address": "Jl. S. Parman, Karangbawang, Purwokerto Kulon, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53144",
+      "lat": -7.43834691269307,
+      "lng": 109.244109182555,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779317311_img_%25Toko%20Daging%20Nusantara%20Logo_%2513d38afd-97bc-4682-a83b-b4b262df24a1.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Purwokerto",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Purwokerto"
+        }
+      ]
+    },
+    {
+      "id": 1767786495361,
+      "name": "TDN Pasar Rebo (Ceger)",
+      "address": "Jl. Raya Ceger No.2, RT.2/RW.2, Ceger, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13820",
+      "lat": -6.3087709832655,
+      "lng": 106.889097531147,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779320314_img_%25Toko%20Daging%20Nusantara%20Logo_%2535fc2f26-01df-45f6-a335-d632a4d1ce1d.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Pasar Rebo (Ceger)",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Pasar Rebo (Ceger)"
+        }
+      ]
+    },
+    {
+      "id": 1767786495362,
+      "name": "TDN Kemang",
+      "address": "Jl. Pangeran Antasari No.8, RT.11/RW.3, Cipete Utara, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12150",
+      "lat": -6.2599305395102,
+      "lng": 106.807929821341,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779323870_img_%25Toko%20Daging%20Nusantara%20Logo_%258d425a87-0895-4be8-9a67-1120a0a0d8f0.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Kemang",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Kemang"
+        }
+      ]
+    },
+    {
+      "id": 1767786495363,
+      "name": "TDN Semarang",
+      "address": "Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50166",
+      "lat": -6.98914502687309,
+      "lng": 110.448043922826,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779328579_img_%25Toko%20Daging%20Nusantara%20Logo_%25e3f45685-8581-4cf1-ab52-4e356ba83ffd.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Semarang",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Semarang"
+        }
+      ]
+    },
+    {
+      "id": 1767786495364,
+      "name": "TDN Cikarang Utara",
+      "address": "Jl. Arif Rahman Hakim No.1, RW.3, Karangbaru, Kec. Cikarang Utara, Kab, Jawa Barat 17530",
+      "lat": -6.26175250381575,
+      "lng": 107.143208923267,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779332122_img_%25Toko%20Daging%20Nusantara%20Logo_%25e1e09fb4-4b67-4cec-8edf-6db4b251f3f0.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Cikarang Utara",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Cikarang Utara"
+        }
+      ]
+    },
+    {
+      "id": 1767786495365,
+      "name": "TDN Duri Kosambi",
+      "address": "Jl. Raya Duri Kosambi No.53, RT.10/RW.2, Duri Kosambi, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750",
+      "lat": -6.18268392028772,
+      "lng": 106.719335318939,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779337171_img_%25Toko%20Daging%20Nusantara%20Logo_%25ae44a48e-26ff-45ca-84d2-103cad0ec231.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Duri Kosambi",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Duri Kosambi"
+        }
+      ]
+    },
+    {
+      "id": 1767786495366,
+      "name": "TDN Karawaci",
+      "address": "Jl. Imam Bonjol No.54, RT.002/RW.003, Sukajadi, Kec. Karawaci, Kota Tangerang, Banten 15113",
+      "lat": -6.18259063747746,
+      "lng": 106.626522339853,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779341410_img_%25Toko%20Daging%20Nusantara%20Logo_%255782e5fc-1cec-4c1d-9a40-b0bd78b43144.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Karawaci",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Karawaci"
+        }
+      ]
+    },
+    {
+      "id": 1767786495367,
+      "name": "TDN Matraman",
+      "address": "Jl. Salemba Raya No.176, RT.1/RW.3, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430",
+      "lat": -6.19166529622681,
+      "lng": 106.84763859253,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779345618_img_%25Toko%20Daging%20Nusantara%20Logo_%252ff6c6c9-ac38-4536-a8a7-5a040333bdb4.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Matraman",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Matraman"
+        }
+      ]
+    },
+    {
+      "id": 1767786495368,
+      "name": "TDN Tebet",
+      "address": "Jl. Prof. DR. Soepomo No.176A, RT.1/RW.15, Menteng Dalam, Kec. Tebet, Jalarta Selatan, Daerah Khusus Ibukota Jakarta 12870",
+      "lat": -6.2307632645998,
+      "lng": 106.846221395611,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779351420_img_%25Toko%20Daging%20Nusantara%20Logo_%25e895c48b-4815-48e4-aa72-00531f5a4b67.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Tebet",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Tebet"
+        }
+      ]
+    },
+    {
+      "id": 1767786495369,
+      "name": "TDN Jati Rawamangun",
+      "address": "Jl. Taruna No.22 13, RT.8/RW.4, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",
+      "lat": -6.187645524289336,
+      "lng": 106.898844254202,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779356140_img_%25Toko%20Daging%20Nusantara%20Logo_%2541ba62ce-dcc9-4295-958c-d1017168dd2c.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Jati Rawamangun",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Jati Rawamangun"
+        }
+      ]
+    },
+    {
+      "id": 1767786495370,
+      "name": "TDN Kranji",
+      "address": "Jl. Pemuda Kranji No.52, RT.003/RW.004, Kranji, Kec. Bekasi Bar., Kota Bks, Jawa Barat 17135",
+      "lat": -6.232629466636207,
+      "lng": 106.974442429321,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779359423_img_%25Toko%20Daging%20Nusantara%20Logo_%259d9cea56-e7dd-4b77-a6b0-976265e53508.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Kranji",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Kranji"
+        }
+      ]
+    },
+    {
+      "id": 1767786495371,
+      "name": "TDN GDC Depok",
+      "address": "Jl. Boulevard Grand Depok City, Tirtajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412",
+      "lat": -6.411515878917922,
+      "lng": 106.819553764264,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1765157389630_img_%25Toko%20Daging%20Nusantara_%2530024244-41c8-4001-a208-dc245a22793d.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN GDC Depok",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN GDC Depok"
+        }
+      ]
+    },
+    {
+      "id": 1767786495372,
+      "name": "TDN Kranggan",
+      "address": "Jl. Kranggan Raya No.45, RT.003/RW.008, Jatiraden, Kec. Jatisampurna, Kota Bks, Jawa Barat 17433",
+      "lat": -6.351402080432738,
+      "lng": 106.921627917072,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779369557_img_%25Toko%20Daging%20Nusantara%20Logo_%253d3fa3b1-0871-4021-a0a1-e8ae6c47f3ac.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Kranggan",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Kranggan"
+        }
+      ]
+    },
+    {
+      "id": 1767786495373,
+      "name": "TDN Bogor",
+      "address": "Jl. KH. R. Abdullah Bin Nuh, RT.07/RW.07, Bubulak, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16117",
+      "lat": -6.570434901195776,
+      "lng": 106.7564465478246,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779374693_img_%25Toko%20Daging%20Nusantara%20Logo_%253ff9b541-9ec1-4323-ac5f-ae2fe38b6705.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Bogor",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Bogor"
+        }
+      ]
+    },
+    {
+      "id": 1767786495374,
+      "name": "TDN Cibinong Bogor",
+      "address": "Kabupaten Bogor",
+      "lat": -6.47250366080224,
+      "lng": 106.820574526982,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1765157386469_img_%25Toko%20Daging%20Nusantara_%2526d66d52-82ee-43ee-879e-ee8ba24b4e7e.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Cibinong Bogor",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Cibinong Bogor"
+        }
+      ]
+    },
+    {
+      "id": 1767786495375,
+      "name": "TDN Cileungsi Bogor",
+      "address": "Kabupaten Bogor",
+      "lat": -6.41043747232243,
+      "lng": 106.961465857672,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1765157393168_img_%25Toko%20Daging%20Nusantara_%2506afadad-3e4e-4486-9bf1-e61a314efc44.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Cileungsi Bogor",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Cileungsi Bogor"
+        }
+      ]
+    },
+    {
+      "id": 1767786495376,
+      "name": "TDN Gracia Boulevard Bintaro",
+      "address": "Ruko Gracia Boulevard Jalan Graha Bintaro Raya Blok GC Nomor 2, Pd. Kacang Bar., Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15226",
+      "lat": -6.253227031805882,
+      "lng": 106.68577506900498,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767620554993_img_%25Toko%20Daging%20Nusantara_%25a34ba137-87c2-49e5-a610-9e2bddff0e83.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Gracia Boulevard Bintaro",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Gracia Boulevard Bintaro"
+        }
+      ]
+    },
+    {
+      "id": 1767786495377,
+      "name": "TDN Citayam Depok",
+      "address": "Jl. RDN Sungging No.146, RT.4/RW.01, Pd. Jaya, Kec. Cipayung, Kota Depok, Jawa Barat 16443",
+      "lat": -6.4367452551869695,
+      "lng": 106.80818262883584,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622084965_img_%25Toko%20Daging%20Nusantara_%25bd41d75b-1fd0-4644-bfc4-379118e25702.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Citayam Depok",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Citayam Depok"
+        }
+      ]
+    },
+    {
+      "id": 1767786495378,
+      "name": "TDN Penggilingan Raya",
+      "address": "Penggilingan, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",
+      "lat": -6.208409310308059,
+      "lng": 106.9365578753588,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622090538_img_%25Toko%20Daging%20Nusantara_%25d2f95e7b-c40a-4a53-9ada-f8fb0a3dd7cc.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Penggilingan Raya",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Penggilingan Raya"
+        }
+      ]
+    },
+    {
+      "id": 1767786495379,
+      "name": "TDN Daya Makasar",
+      "address": "Daya, Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan 90241",
+      "lat": -5.10797302037046,
+      "lng": 119.5109164576717,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622097798_img_%25Toko%20Daging%20Nusantara_%252f678a4d-c637-4eec-b82a-dc177ce77b52.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Daya Makasar",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Daya Makasar"
+        }
+      ]
+    },
+    {
+      "id": 1767786495380,
+      "name": "TDN Grand Poris",
+      "address": "Jl. Alas Tua Jl. Grand Poris, RT.002/RW.006, Cipondoh Indah, Kec. Cipondoh, Kota Tangerang, Banten 15122",
+      "lat": -6.173484914659967,
+      "lng": 106.68485740737593,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622108546_img_%25Toko%20Daging%20Nusantara_%254ccd7c05-0f2a-4c33-867e-1b52d2685a2a.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Grand Poris",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Grand Poris"
+        }
+      ]
+    },
+    {
+      "id": 1767786495381,
+      "name": "TDN Ir juanda",
+      "address": "Jl. Insinyur H. Juanda No.141, RT.001/RW.001, Duren Jaya, Kec. Bekasi Tim., Kota Bks, Jawa Barat 17111",
+      "lat": -6.246092555245573,
+      "lng": 107.01056506187057,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622113164_img_%25Toko%20Daging%20Nusantara_%257b6470f4-f9c0-4ac9-a37c-8326905bef73.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Ir juanda",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Ir juanda"
+        }
+      ]
+    },
+    {
+      "id": 1767786495382,
+      "name": "TDN Mangunjaya Tambun",
+      "address": "Jl. Raya Sumber Jaya No.29, Mangunjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510",
+      "lat": -6.246360907279177,
+      "lng": 107.06155664439133,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622583388_img_%25Toko%20Daging%20Nusantara_%25fbed8e38-907b-4fc4-a61a-12a8a90d348f.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Mangunjaya Tambun",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Mangunjaya Tambun"
+        }
+      ]
+    },
+    {
+      "id": 1767786495383,
+      "name": "TDN Kebagusan Jaksel",
+      "address": "Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+      "lat": -6.320220463865167,
+      "lng": 106.82537817116413,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622590309_img_%25Toko%20Daging%20Nusantara_%2564db4832-fff6-4f60-b93b-3be2b7b24096.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Kebagusan Jaksel",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Kebagusan Jaksel"
+        }
+      ]
+    },
+    {
+      "id": 1767786495384,
+      "name": "TDN Grha 71 Bintaro",
+      "address": "Jl. Cendrawasih Raya No.71, Sawah Lama, Kec. Ciputat, Kota Tangerang Selatan, Banten 15413",
+      "lat": -6.29256825934578,
+      "lng": 106.73271037116415,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622597151_img_%25Toko%20Daging%20Nusantara_%2591420ff7-0a70-4668-9fbf-20a157c2bd3f.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Grha 71 Bintaro",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Grha 71 Bintaro"
+        }
+      ]
+    },
+    {
+      "id": 1767786495385,
+      "name": "TDN Raya Cilandak KKO Ragunan",
+      "address": "Jl. Raya Cilandak KKO No.47c, RT.1/RW.5, Ragunan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12550",
+      "lat": -6.293538437381137,
+      "lng": 106.81637675398302,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622601926_img_%25Toko%20Daging%20Nusantara_%25fd5a35fb-79dd-4c48-a8c6-a6db9770a344.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Raya Cilandak KKO Ragunan",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Raya Cilandak KKO Ragunan"
+        }
+      ]
+    },
+    {
+      "id": 1767786495386,
+      "name": "TDN Tanjung Duren Grogol",
+      "address": "Tj. Duren Sel., Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+      "lat": -6.1826470004907526,
+      "lng": 106.78357672853592,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622608519_img_%25Toko%20Daging%20Nusantara_%254a532228-5a74-4760-ae5f-a6e25c0faca6.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Tanjung Duren Grogol",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Tanjung Duren Grogol"
+        }
+      ]
+    }
+  ]
+}

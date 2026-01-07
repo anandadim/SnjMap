@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - TDN</title>
+    
+    <!-- Vue 3 -->
+    <script src="../libs/vue.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .back-link {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .card-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .locations-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .location-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+        
+        .location-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .location-address {
+            font-weight: bold;
+            color: #333;
+            flex: 1;
+        }
+        
+        .location-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .businesses-list {
+            margin-top: 1rem;
+        }
+        
+        .business-item {
+            background: white;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #007bff;
+        }
+        
+        .business-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .business-category {
+            background: #007bff;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .business-actions {
+            margin-top: 0.5rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .alert {
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <div>
+                <h1>🛠️ Admin Panel</h1>
+                <p>Kelola Data Lokasi dan Bisnis</p>
+            </div>
+            <a href="/" class="back-link">← Kembali ke Map</a>
+        </div>
+        
+        <div class="container">
+            <!-- Alert Messages -->
+            <div v-if="alert.show" :class="['alert', alert.type === 'success' ? 'alert-success' : 'alert-error']">
+                {{ alert.message }}
+            </div>
+            
+            <!-- Add New Location Form -->
+            <div class="card">
+                <div class="card-header">
+                    ➕ Tambah Lokasi Baru
+                </div>
+                <div class="card-body">
+                    <form @submit.prevent="addLocation">
+                        <div class="form-group">
+                            <label class="form-label">Nama Tempat</label>
+                            <input 
+                                type="text" 
+                                class="form-input" 
+                                v-model="newLocation.name" 
+                                placeholder="Masukkan nama tempat/lokasi..."
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Alamat</label>
+                            <textarea 
+                                class="form-textarea" 
+                                v-model="newLocation.address" 
+                                placeholder="Masukkan alamat lengkap..."
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Latitude</label>
+                                <input 
+                                    type="number" 
+                                    step="any" 
+                                    class="form-input" 
+                                    v-model="newLocation.lat" 
+                                    placeholder="-6.2088"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Longitude</label>
+                                <input 
+                                    type="number" 
+                                    step="any" 
+                                    class="form-input" 
+                                    v-model="newLocation.lng" 
+                                    placeholder="106.8456"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        
+                        <!-- Marker Customization -->
+                        <div class="form-group">
+                            <label class="form-label">🎨 Marker Customization</label>
+                            
+                            <!-- Marker Type Selection -->
+                            <div style="margin-bottom: 1rem;">
+                                <label class="form-label" style="font-size: 12px; margin-bottom: 0.5rem;">Pilih Jenis Marker</label>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" v-model="newLocation.marker.type" value="default" @change="resetMarkerOptions">
+                                        <span>🔵 Default (Biru)</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" v-model="newLocation.marker.type" value="color" @change="resetMarkerOptions">
+                                        <span>🎨 Custom Color</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" v-model="newLocation.marker.type" value="icon" @change="resetMarkerOptions">
+                                        <span>🖼️ Custom Icon</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Color Picker (only show when color is selected) -->
+                            <div v-if="newLocation.marker.type === 'color'" style="margin-bottom: 1rem;">
+                                <label class="form-label" style="font-size: 12px; margin-bottom: 0.25rem;">Pilih Warna Marker</label>
+                                <input 
+                                    type="color" 
+                                    class="form-input" 
+                                    v-model="newLocation.marker.color"
+                                    style="height: 40px; max-width: 200px;"
+                                >
+                            </div>
+                            
+                            <!-- Icon Upload (only show when icon is selected) -->
+                            <div v-if="newLocation.marker.type === 'icon'">
+                                <label class="form-label" style="font-size: 12px; margin-bottom: 0.25rem;">Upload Custom Icon (PNG/JPG)</label>
+                                <input 
+                                    type="file" 
+                                    class="form-input" 
+                                    accept="image/png,image/jpeg,image/jpg"
+                                    @change="handleIconUpload"
+                                    style="padding: 0.5rem; margin-bottom: 0.5rem;"
+                                >
+                                <div v-if="newLocation.marker.icon" style="margin-top: 0.5rem;">
+                                    <img :src="newLocation.marker.icon" alt="Preview" style="width: 32px; height: 32px; border: 1px solid #ddd; border-radius: 3px;">
+                                    <button type="button" @click="removeIcon" class="btn btn-danger" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; font-size: 12px;">Hapus Icon</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tambah Lokasi</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Locations List -->
+            <div class="card">
+                <div class="card-header">
+                    📍 Daftar Lokasi ({{ locations.length }})
+                </div>
+                <div class="card-body">
+                    <div class="locations-grid">
+                        <div v-for="location in locations" :key="location.id" class="location-item">
+                            <div class="location-header">
+                                <div class="location-address">
+                                    <div style="font-weight: bold; color: #333; margin-bottom: 0.25rem;">{{ location.name || 'Nama tidak tersedia' }}</div>
+                                    <div style="font-size: 14px; color: #666;">{{ location.address }}</div>
+                                </div>
+                                <div class="location-actions">
+                                    <button @click="editLocation(location)" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 12px;">Edit</button>
+                                    <button @click="deleteLocation(location.id)" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 12px;">Hapus</button>
+                                </div>
+                            </div>
+                            
+                            <div style="font-size: 12px; color: #666; margin-bottom: 1rem;">
+                                Koordinat: {{ location.lat }}, {{ location.lng }}
+                                <span v-if="location.marker" style="margin-left: 1rem;">
+                                    🎨 Marker: 
+                                    <span v-if="location.marker.type === 'icon' && location.marker.icon">🖼️ Custom Icon</span>
+                                    <span v-else-if="location.marker.type === 'color'" :style="{ color: location.marker.color }">🎨 Custom Color</span>
+                                    <span v-else>🔵 Default</span>
+                                </span>
+                            </div>
+                            
+                            <div class="businesses-list">
+                                <div v-for="business in location.businesses" :key="business.name" class="business-item">
+                                    <div class="business-name">{{ business.name }}</div>
+                                    <div class="business-category">{{ business.category }}</div>
+                                    <div style="font-size: 14px; color: #666;">📞 {{ business.phone }}</div>
+                                    <div v-if="business.description" style="font-size: 13px; color: #777; font-style: italic;">{{ business.description }}</div>
+                                    
+                                    <div class="business-actions">
+                                        <button @click="editBusiness(location, business)" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 11px;">Edit Bisnis</button>
+                                        <button @click="deleteBusiness(location, business)" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 11px;">Hapus Bisnis</button>
+                                    </div>
+                                </div>
+                                
+                                <button @click="addBusiness(location)" class="btn btn-primary" style="margin-top: 0.5rem; padding: 0.5rem; font-size: 12px;">+ Tambah Bisnis</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for editing -->
+        <div :class="['modal', { show: modal.show }]" @click="closeModal">
+            <div class="modal-content" @click.stop>
+                <div class="modal-header">{{ modal.title }}</div>
+                
+                <!-- Location Edit Form -->
+                <form v-if="modal.type === 'location'" @submit.prevent="saveLocation">
+                    <div class="form-group">
+                        <label class="form-label">Nama Tempat</label>
+                        <input type="text" class="form-input" v-model="modal.data.name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Alamat</label>
+                        <textarea class="form-textarea" v-model="modal.data.address" required></textarea>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label">Latitude</label>
+                            <input type="number" step="any" class="form-input" v-model="modal.data.lat" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Longitude</label>
+                            <input type="number" step="any" class="form-input" v-model="modal.data.lng" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Marker Customization in Edit Modal -->
+                    <div class="form-group">
+                        <label class="form-label">🎨 Marker Customization</label>
+                        
+                        <!-- Marker Type Selection -->
+                        <div style="margin-bottom: 1rem;">
+                            <label class="form-label" style="font-size: 12px; margin-bottom: 0.5rem;">Pilih Jenis Marker</label>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="radio" v-model="modal.data.marker.type" value="default" @change="resetModalMarkerOptions">
+                                    <span>🔵 Default (Biru)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="radio" v-model="modal.data.marker.type" value="color" @change="resetModalMarkerOptions">
+                                    <span>🎨 Custom Color</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="radio" v-model="modal.data.marker.type" value="icon" @change="resetModalMarkerOptions">
+                                    <span>🖼️ Custom Icon</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Color Picker (only show when color is selected) -->
+                        <div v-if="modal.data.marker.type === 'color'" style="margin-bottom: 1rem;">
+                            <label class="form-label" style="font-size: 12px; margin-bottom: 0.25rem;">Pilih Warna Marker</label>
+                            <input 
+                                type="color" 
+                                class="form-input" 
+                                v-model="modal.data.marker.color"
+                                style="height: 40px; max-width: 200px;"
+                            >
+                        </div>
+                        
+                        <!-- Icon Upload (only show when icon is selected) -->
+                        <div v-if="modal.data.marker.type === 'icon'">
+                            <label class="form-label" style="font-size: 12px; margin-bottom: 0.25rem;">Upload Custom Icon (PNG/JPG)</label>
+                            <input 
+                                type="file" 
+                                class="form-input" 
+                                accept="image/png,image/jpeg,image/jpg"
+                                @change="handleModalIconUpload"
+                                style="padding: 0.5rem; margin-bottom: 0.5rem;"
+                            >
+                            <div v-if="modal.data.marker && modal.data.marker.icon" style="margin-top: 0.5rem;">
+                                <img :src="modal.data.marker.icon" alt="Preview" style="width: 32px; height: 32px; border: 1px solid #ddd; border-radius: 3px;">
+                                <button type="button" @click="removeModalIcon" class="btn btn-danger" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; font-size: 12px;">Hapus Icon</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <button type="button" @click="closeModal" class="btn btn-secondary">Batal</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+                
+                <!-- Business Edit Form -->
+                <form v-if="modal.type === 'business'" @submit.prevent="saveBusiness">
+                    <div class="form-group">
+                        <label class="form-label">Nama Bisnis</label>
+                        <input type="text" class="form-input" v-model="modal.data.name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select" v-model="modal.data.category" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="Grosir">Grosir</option>
+                            <option value="Toko">Toko</option>
+                            <option value="Kedai Steak">Kedai Steak</option>
+                            <option value="Nusantara Resto">Nusantara Resto</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nomor Telepon</label>
+                        <input type="text" class="form-input" v-model="modal.data.phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Deskripsi (Opsional)</label>
+                        <textarea class="form-textarea" v-model="modal.data.description" placeholder="Deskripsi singkat bisnis..."></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <button type="button" @click="closeModal" class="btn btn-secondary">Batal</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
