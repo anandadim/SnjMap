@@ -138,7 +138,16 @@
         .btn-secondary:hover {
             background: #545b62;
         }
-        
+
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+
         .locations-grid {
             display: grid;
             gap: 1rem;
@@ -180,12 +189,42 @@
             margin-bottom: 0.5rem;
             border-left: 3px solid #007bff;
         }
-        
+
+        .business-inactive {
+            border-left-color: #dc3545;
+            background: #f8f9fa;
+            opacity: 0.8;
+        }
+
+        .business-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
         .business-name {
             font-weight: bold;
             color: #333;
         }
-        
+
+        .business-status {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         .business-category {
             background: #007bff;
             color: white;
@@ -321,7 +360,18 @@
                                 >
                             </div>
                         </div>
-                        
+
+                        <!-- Stage Selection -->
+                        <div class="form-group">
+                            <label class="form-label">📋 Status Proyek</label>
+                            <select class="form-select" v-model="newLocation.stage" required>
+                                <option value="survey">🔍 On-Survey</option>
+                                <option value="build">🚧 Dalam Pembangunan</option>
+                                <option value="permit">📑 Pengurusan Izin</option>
+                                <option value="operational">🏢 Beroperasi</option>
+                            </select>
+                        </div>
+
                         <!-- Marker Customization -->
                         <div class="form-group">
                             <label class="form-label">🎨 Marker Customization</label>
@@ -384,8 +434,17 @@
                     📍 Daftar Lokasi ({{ locations.length }})
                 </div>
                 <div class="card-body">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input
+                            type="text"
+                            class="form-input"
+                            v-model="searchQuery"
+                            placeholder="🔍 Cari lokasi berdasarkan nama, alamat, atau nama bisnis..."
+                            style="width: 100%;"
+                        >
+                    </div>
                     <div class="locations-grid">
-                        <div v-for="location in locations" :key="location.id" class="location-item">
+                        <div v-for="location in filteredLocations" :key="location.id" class="location-item">
                             <div class="location-header">
                                 <div class="location-address">
                                     <div style="font-weight: bold; color: #333; margin-bottom: 0.25rem;">{{ location.name || 'Nama tidak tersedia' }}</div>
@@ -408,13 +467,21 @@
                             </div>
                             
                             <div class="businesses-list">
-                                <div v-for="business in location.businesses" :key="business.name" class="business-item">
-                                    <div class="business-name">{{ business.name }}</div>
+                                <div v-for="business in location.businesses" :key="business.name" class="business-item" :class="{ 'business-inactive': !business.active }">
+                                    <div class="business-header">
+                                        <div class="business-name">{{ business.name }}</div>
+                                        <div class="business-status" :class="{ 'status-active': business.active, 'status-inactive': !business.active }">
+                                            {{ business.active ? '✓ Aktif' : '✗ Non-aktif' }}
+                                        </div>
+                                    </div>
                                     <div class="business-category">{{ business.category }}</div>
                                     <div style="font-size: 14px; color: #666;">📞 {{ business.phone }}</div>
                                     <div v-if="business.description" style="font-size: 13px; color: #777; font-style: italic;">{{ business.description }}</div>
                                     
                                     <div class="business-actions">
+                                        <button @click="toggleBusinessStatus(location, business)" :class="['btn', business.active ? 'btn-warning' : 'btn-success']" style="padding: 0.25rem 0.5rem; font-size: 11px;">
+                                            {{ business.active ? 'Non-aktifkan' : 'Aktifkan' }}
+                                        </button>
                                         <button @click="editBusiness(location, business)" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 11px;">Edit Bisnis</button>
                                         <button @click="deleteBusiness(location, business)" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 11px;">Hapus Bisnis</button>
                                     </div>
@@ -456,7 +523,18 @@
                             <input type="number" step="any" class="form-input" v-model="modal.data.lng" required>
                         </div>
                     </div>
-                    
+
+                    <!-- Stage Selection in Edit Modal -->
+                    <div class="form-group">
+                        <label class="form-label">📋 Status Proyek</label>
+                        <select class="form-select" v-model="modal.data.stage" required>
+                            <option value="survey">🔍 On-Survey</option>
+                            <option value="build">🚧 Dalam Pembangunan</option>
+                            <option value="permit">📑 Pengurusan Izin</option>
+                            <option value="operational">🏢 Beroperasi</option>
+                        </select>
+                    </div>
+
                     <!-- Marker Customization in Edit Modal -->
                     <div class="form-group">
                         <label class="form-label">🎨 Marker Customization</label>
