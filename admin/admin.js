@@ -4,11 +4,13 @@ createApp({
     data() {
         return {
             locations: [],
+            searchQuery: '',
             newLocation: {
                 name: '',
                 address: '',
                 lat: '',
                 lng: '',
+                stage: 'survey',
                 marker: {
                     type: 'default',
                     color: '#3388ff',
@@ -31,7 +33,26 @@ createApp({
             }
         }
     },
-    
+
+    computed: {
+        filteredLocations() {
+            if (!this.searchQuery.trim()) {
+                return this.locations;
+            }
+
+            const query = this.searchQuery.toLowerCase();
+            return this.locations.filter(location => {
+                const nameMatch = location.name && location.name.toLowerCase().includes(query);
+                const addressMatch = location.address && location.address.toLowerCase().includes(query);
+                const businessMatch = location.businesses.some(business =>
+                    business.name.toLowerCase().includes(query)
+                );
+
+                return nameMatch || addressMatch || businessMatch;
+            });
+        }
+    },
+
     async mounted() {
         await this.loadLocations();
     },
@@ -55,13 +76,14 @@ createApp({
                     address: this.newLocation.address,
                     lat: parseFloat(this.newLocation.lat),
                     lng: parseFloat(this.newLocation.lng),
+                    stage: this.newLocation.stage,
                     marker: {
                         color: this.newLocation.marker.color,
                         icon: this.newLocation.marker.icon
                     },
                     businesses: []
                 };
-                
+
                 const response = await fetch('/api/locations', {
                     method: 'POST',
                     headers: {
@@ -69,16 +91,17 @@ createApp({
                     },
                     body: JSON.stringify(locationData)
                 });
-                
+
                 if (response.ok) {
                     this.showAlert('success', 'Lokasi berhasil ditambahkan');
-                    this.newLocation = { 
+                    this.newLocation = {
                         name: '',
-                        address: '', 
-                        lat: '', 
-                        lng: '', 
+                        address: '',
+                        lat: '',
+                        lng: '',
+                        stage: 'survey',
                         marker: { type: 'default', color: '#3388ff', icon: null },
-                        businesses: [] 
+                        businesses: []
                     };
                     await this.loadLocations();
                 } else {
@@ -132,10 +155,11 @@ createApp({
                         address: this.modal.data.address,
                         lat: parseFloat(this.modal.data.lat),
                         lng: parseFloat(this.modal.data.lng),
+                        stage: this.modal.data.stage,
                         marker: this.modal.data.marker
                     })
                 });
-                
+
                 if (response.ok) {
                     this.showAlert('success', 'Lokasi berhasil diperbarui');
                     this.closeModal();
@@ -267,6 +291,40 @@ createApp({
             }
         },
         
+        async toggleBusinessStatus(location, business) {
+            try {
+                const businessIndex = location.businesses.findIndex(b => b.name === business.name);
+                if (businessIndex === -1) return;
+
+                const updatedBusinesses = [...location.businesses];
+                updatedBusinesses[businessIndex] = {
+                    ...updatedBusinesses[businessIndex],
+                    active: !updatedBusinesses[businessIndex].active
+                };
+
+                const response = await fetch(`/api/locations/${location.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        businesses: updatedBusinesses
+                    })
+                });
+
+                if (response.ok) {
+                    const newStatus = updatedBusinesses[businessIndex].active ? 'Aktif' : 'Non-aktif';
+                    this.showAlert('success', `Status bisnis berhasil diubah menjadi ${newStatus}`);
+                    await this.loadLocations();
+                } else {
+                    this.showAlert('error', 'Gagal mengubah status bisnis');
+                }
+            } catch (error) {
+                this.showAlert('error', 'Terjadi kesalahan saat mengubah status bisnis');
+                console.error('Error toggling business status:', error);
+            }
+        },
+
         closeModal() {
             this.modal = {
                 show: false,
@@ -352,26 +410,22 @@ createApp({
         },
         
         resetMarkerOptions() {
-            // Reset options when marker type changes
-            if (this.newLocation.marker.type === 'default') {
-                this.newLocation.marker.color = '#3388ff';
-                this.newLocation.marker.icon = null;
-            } else if (this.newLocation.marker.type === 'color') {
-                this.newLocation.marker.icon = null;
-            } else if (this.newLocation.marker.type === 'icon') {
-                this.newLocation.marker.color = '#3388ff';
+            this.newLocation.marker.color = '#3388ff';
+            this.newLocation.marker.icon = null;
+            if (this.newLocation.marker.type === 'icon') {
+                this.newLocation.stage = 'operational';
+            } else if (this.newLocation.stage === 'operational' && this.newLocation.marker.type !== 'icon') {
+                this.newLocation.stage = 'survey';
             }
         },
-        
+
         resetModalMarkerOptions() {
-            // Reset options when marker type changes in modal
-            if (this.modal.data.marker.type === 'default') {
-                this.modal.data.marker.color = '#3388ff';
-                this.modal.data.marker.icon = null;
-            } else if (this.modal.data.marker.type === 'color') {
-                this.modal.data.marker.icon = null;
-            } else if (this.modal.data.marker.type === 'icon') {
-                this.modal.data.marker.color = '#3388ff';
+            this.modal.data.marker.color = '#3388ff';
+            this.modal.data.marker.icon = null;
+            if (this.modal.data.marker.type === 'icon') {
+                this.modal.data.stage = 'operational';
+            } else if (this.modal.data.stage === 'operational' && this.modal.data.marker.type !== 'icon') {
+                this.modal.data.stage = 'survey';
             }
         }
     }

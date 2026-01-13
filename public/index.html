@@ -14,6 +14,9 @@
     <!-- Leaflet JS -->
     <script src="libs/leaflet/leaflet.js"></script>
     
+    <!-- Leaflet.VectorGrid -->
+    <script src="libs/leaflet-vectorgrid.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -103,13 +106,37 @@
             border-radius: 5px;
             border-left: 3px solid #667eea;
         }
-        
+
+        .business-inactive {
+            border-left-color: #dc3545;
+            opacity: 0.8;
+        }
+
         .business-name {
             font-weight: bold;
             color: #333;
             margin-bottom: 5px;
         }
-        
+
+        .business-status {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         .business-category {
             background: #667eea;
             color: white;
@@ -145,11 +172,13 @@
             background: none;
             border: none;
         }
-        
+
         .custom-colored-marker svg {
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
         }
-        
+
+        .custom-icon-inactive { filter: grayscale(100%) brightness(40%) opacity(.8); }
+
         .location-label {
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid #ccc;
@@ -161,7 +190,33 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.3);
             white-space: nowrap;
         }
-        
+
+        /* Laut default di area tanpa tile */
+        .leaflet-container {
+            background: #b5d0ff;   /* biru muda yang sama dengan water polygon */
+        }
+
+        .stage-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .stage-tooltip-text {
+            display: block;
+            margin-top: 2px;
+            padding-top: 2px;
+            border-top: 1px solid #007bff;
+            color: #007bff;
+            font-size: 10px;
+        }
+
         .location-label:before {
             display: none;
         }
@@ -223,6 +278,12 @@
         
         .layer-button.active:hover {
             background-color: #5a6fd8;
+        }
+        
+        /* Indonesia Blur Overlay Styling */
+        .indonesia-blur-overlay {
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
     </style>
 </head>

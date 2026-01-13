@@ -9,6 +9,11 @@ pids
 *.pid
 *.seed
 *.pid.lock
+*.pbf
+*.zip
+*.mbtiles
+*.geojson
+*.jar
 
 # Coverage directory used by tools like istanbul
 coverage/
@@ -71,7 +76,12 @@ dist
 
 # Gatsby files
 .cache/
+
+# Allow tracking/reading this project's frontend source in public/
+# (this repo uses public/ as source, not build output)
 public
+!public/
+!public/**
 
 # Storybook build outputs
 .out

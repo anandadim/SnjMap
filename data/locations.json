@@ -9,16 +9,18 @@
       "marker": {
         "type": "icon",
         "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779305279_img_%25Toko%20Daging%20Nusantara%20Logo_%25940d0c3f-7b6e-45f1-86f8-5d6f8d43d4fd.png"
+        "icon": "/uploads/icons/icon-1768198894764-975576392.png"
       },
       "businesses": [
         {
           "name": "TDN Cikampek",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Cikampek"
+          "description": "Toko Daging Nusantara - TDN Cikampek",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495359,
@@ -36,9 +38,11 @@
           "name": "TDN Kopo Soreang",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Kopo Soreang"
+          "description": "Toko Daging Nusantara - TDN Kopo Soreang",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495360,
@@ -56,9 +60,11 @@
           "name": "TDN Purwokerto",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Purwokerto"
+          "description": "Toko Daging Nusantara - TDN Purwokerto",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495361,
@@ -76,9 +82,11 @@
           "name": "TDN Pasar Rebo (Ceger)",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Pasar Rebo (Ceger)"
+          "description": "Toko Daging Nusantara - TDN Pasar Rebo (Ceger)",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495362,
@@ -96,9 +104,11 @@
           "name": "TDN Kemang",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Kemang"
+          "description": "Toko Daging Nusantara - TDN Kemang",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495363,
@@ -116,9 +126,11 @@
           "name": "TDN Semarang",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Semarang"
+          "description": "Toko Daging Nusantara - TDN Semarang",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495364,
@@ -136,9 +148,11 @@
           "name": "TDN Cikarang Utara",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Cikarang Utara"
+          "description": "Toko Daging Nusantara - TDN Cikarang Utara",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495365,
@@ -156,9 +170,11 @@
           "name": "TDN Duri Kosambi",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Duri Kosambi"
+          "description": "Toko Daging Nusantara - TDN Duri Kosambi",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495366,
@@ -176,9 +192,11 @@
           "name": "TDN Karawaci",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Karawaci"
+          "description": "Toko Daging Nusantara - TDN Karawaci",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495367,
@@ -196,9 +214,11 @@
           "name": "TDN Matraman",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Matraman"
+          "description": "Toko Daging Nusantara - TDN Matraman",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495368,
@@ -216,9 +236,11 @@
           "name": "TDN Tebet",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Tebet"
+          "description": "Toko Daging Nusantara - TDN Tebet",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495369,
@@ -236,9 +258,11 @@
           "name": "TDN Jati Rawamangun",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Jati Rawamangun"
+          "description": "Toko Daging Nusantara - TDN Jati Rawamangun",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495370,
@@ -256,9 +280,11 @@
           "name": "TDN Kranji",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Kranji"
+          "description": "Toko Daging Nusantara - TDN Kranji",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495371,
@@ -276,9 +302,11 @@
           "name": "TDN GDC Depok",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN GDC Depok"
+          "description": "Toko Daging Nusantara - TDN GDC Depok",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495372,
@@ -296,9 +324,11 @@
           "name": "TDN Kranggan",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Kranggan"
+          "description": "Toko Daging Nusantara - TDN Kranggan",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495373,
@@ -316,9 +346,11 @@
           "name": "TDN Bogor",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Bogor"
+          "description": "Toko Daging Nusantara - TDN Bogor",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495374,
@@ -336,9 +368,11 @@
           "name": "TDN Cibinong Bogor",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Cibinong Bogor"
+          "description": "Toko Daging Nusantara - TDN Cibinong Bogor",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495375,
@@ -356,9 +390,11 @@
           "name": "TDN Cileungsi Bogor",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Cileungsi Bogor"
+          "description": "Toko Daging Nusantara - TDN Cileungsi Bogor",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495376,
@@ -376,9 +412,11 @@
           "name": "TDN Gracia Boulevard Bintaro",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Gracia Boulevard Bintaro"
+          "description": "Toko Daging Nusantara - TDN Gracia Boulevard Bintaro",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495377,
@@ -396,9 +434,11 @@
           "name": "TDN Citayam Depok",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Citayam Depok"
+          "description": "Toko Daging Nusantara - TDN Citayam Depok",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495378,
@@ -416,9 +456,11 @@
           "name": "TDN Penggilingan Raya",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Penggilingan Raya"
+          "description": "Toko Daging Nusantara - TDN Penggilingan Raya",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495379,
@@ -436,9 +478,11 @@
           "name": "TDN Daya Makasar",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Daya Makasar"
+          "description": "Toko Daging Nusantara - TDN Daya Makasar",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495380,
@@ -456,9 +500,11 @@
           "name": "TDN Grand Poris",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Grand Poris"
+          "description": "Toko Daging Nusantara - TDN Grand Poris",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495381,
@@ -476,9 +522,11 @@
           "name": "TDN Ir juanda",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Ir juanda"
+          "description": "Toko Daging Nusantara - TDN Ir juanda",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495382,
@@ -496,9 +544,11 @@
           "name": "TDN Mangunjaya Tambun",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Mangunjaya Tambun"
+          "description": "Toko Daging Nusantara - TDN Mangunjaya Tambun",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495383,
@@ -516,9 +566,11 @@
           "name": "TDN Kebagusan Jaksel",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Kebagusan Jaksel"
+          "description": "Toko Daging Nusantara - TDN Kebagusan Jaksel",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495384,
@@ -536,9 +588,11 @@
           "name": "TDN Grha 71 Bintaro",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Grha 71 Bintaro"
+          "description": "Toko Daging Nusantara - TDN Grha 71 Bintaro",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495385,
@@ -556,9 +610,11 @@
           "name": "TDN Raya Cilandak KKO Ragunan",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Raya Cilandak KKO Ragunan"
+          "description": "Toko Daging Nusantara - TDN Raya Cilandak KKO Ragunan",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     },
     {
       "id": 1767786495386,
@@ -576,9 +632,11 @@
           "name": "TDN Tanjung Duren Grogol",
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Tanjung Duren Grogol"
+          "description": "Toko Daging Nusantara - TDN Tanjung Duren Grogol",
+          "active": true
         }
-      ]
+      ],
+      "stage": "operational"
     }
   ]
 }
