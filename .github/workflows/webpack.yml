@@ -1,0 +1,33 @@
+name: NodeJS Test
+
+on:
+  push:
+    branches: [ "dev" ] # Sesuaikan dengan nama branch dev Anda
+  pull_request:
+    branches: [ "dev", "main" ]
+
+jobs:
+  test: # Nama job ini yang nanti dipilih di Branch Protection Rules
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+    - name: Checkout kode
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm' # Mengaktifkan caching otomatis
+
+    - name: Install dependencies
+      run: npm ci # Lebih stabil untuk CI dibanding 'npm install'
+
+    - name: Run Tests
+      run: npm test
+      env:
+        CI: true # Menghindari prompt interaktif (seperti masalah webpack sebelumnya)
