@@ -31,6 +31,6 @@ jobs:
       run: npm test
       
     - name: Run Build
-      run: npm run build
+      run: npx webpack
       env:
         CI: true # Menghindari prompt interaktif (seperti masalah webpack sebelumnya)
