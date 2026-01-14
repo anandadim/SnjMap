@@ -1,0 +1,53 @@
+name: 2. Production Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # --- BAGIAN 1: Validasi di GitHub ---
+      - name: Ambil Kode
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Cek Webpack Build (Validasi)
+        run: npm run build
+        env:
+          CI: true
+        # PENTING: Jika step ini error, workflow berhenti.
+        # Server TIDAK akan di-deploy. Kode aman.
+
+      # --- BAGIAN 2: Deploy ke Server (Jika lolos validasi) ---
+      - name: Deploy ke Server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            # Masuk ke folder project di server
+            cd /path/lokasi/project/anda
+            
+            # Tarik kode terbaru dari main
+            git pull origin main
+            
+            # Install ulang (jaga-jaga ada library baru)
+            npm install
+            
+            # Build ulang di server (untuk update file dist/public)
+            npm run build
+            
+            # Restart PM2
+            pm2 reload all
