@@ -1,10 +1,10 @@
-name: NodeJS with Webpack
+name: NodeJS di Dev
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev" ]
 
 jobs:
   build:
@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: |
         npm install
-        npx webpack
+        npm test
