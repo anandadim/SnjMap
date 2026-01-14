@@ -5,6 +5,15 @@ createApp({
         return {
             locations: [],
             searchQuery: '',
+            importFile: null,
+            importing: false,
+            importResult: null,
+            importProgress: {
+                percentage: 0,
+                status: '',
+                current: 0,
+                total: 0
+            },
             newLocation: {
                 name: '',
                 address: '',
@@ -427,6 +436,98 @@ createApp({
             } else if (this.modal.data.stage === 'operational' && this.modal.data.marker.type !== 'icon') {
                 this.modal.data.stage = 'survey';
             }
+        },
+
+        handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const ext = file.name.split('.').pop().toLowerCase();
+                if (ext === 'csv' || ext === 'xlsx' || ext === 'xls') {
+                    this.importFile = file;
+                } else {
+                    this.showAlert('error', 'Harap upload file CSV atau Excel yang valid');
+                    this.importFile = null;
+                }
+            }
+        },
+
+        async handleImport() {
+            if (!this.importFile) {
+                this.showAlert('error', 'Harap pilih file terlebih dahulu');
+                return;
+            }
+
+            this.importing = true;
+            this.importProgress = {
+                percentage: 0,
+                status: 'Mengupload file...',
+                current: 0,
+                total: 0
+            };
+            console.log('[Frontend] Starting import process...');
+            console.log('[Frontend] File:', this.importFile.name, `(${this.importFile.size} bytes)`);
+
+            const formData = new FormData();
+            formData.append('file', this.importFile);
+
+            try {
+                console.log('[Frontend] Sending request to server...');
+                this.importProgress.status = 'Mengirim file ke server...';
+                this.importProgress.percentage = 10;
+
+                const response = await fetch('/api/locations/bulk-import', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('[Frontend] Server response received');
+                this.importProgress.status = 'Memproses data...';
+                this.importProgress.percentage = 50;
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    console.log('[Frontend] Import successful:', result);
+                    this.importProgress.status = 'Menyimpan data...';
+                    this.importProgress.percentage = 90;
+
+                    try {
+                        await this.loadLocations();
+                    } catch (loadError) {
+                        console.error('[Frontend] Error loading locations:', loadError);
+                        // Tetap lanjutkan meskipun loadLocations gagal
+                    }
+                    
+                    this.importProgress.percentage = 100;
+                    this.importProgress.status = 'Selesai!';
+                    
+                    this.importResult = result;
+                    this.showAlert('success', `Import selesai! ${result.stats.added} ditambahkan, ${result.stats.updated} diupdate, ${result.stats.skipped} dilewati (${result.duration}s)`);
+                } else {
+                    console.error('[Frontend] Import failed:', result.error);
+                    this.showAlert('error', result.error || 'Gagal melakukan import');
+                }
+            } catch (error) {
+                console.error('[Frontend] Import error:', error);
+                this.showAlert('error', 'Terjadi kesalahan saat import');
+            } finally {
+                this.importing = false;
+            }
+        },
+
+        resetImport() {
+            this.importFile = null;
+            this.importResult = null;
+            this.importProgress = {
+                percentage: 0,
+                status: '',
+                current: 0,
+                total: 0
+            };
+            if (this.$refs.fileInput) {
+                this.$refs.fileInput.value = '';
+            }
+            console.log('[Frontend] Import state reset');
         }
     }
 }).mount('#app');

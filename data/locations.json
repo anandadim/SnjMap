@@ -9,7 +9,7 @@
       "marker": {
         "type": "icon",
         "color": "#3388ff",
-        "icon": "/uploads/icons/icon-1768198894764-975576392.png"
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779305279_img_%25Toko%20Daging%20Nusantara%20Logo_%25940d0c3f-7b6e-45f1-86f8-5d6f8d43d4fd.png"
       },
       "businesses": [
         {
@@ -20,7 +20,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495359,
@@ -42,7 +43,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495360,
@@ -64,7 +66,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495361,
@@ -86,7 +89,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495362,
@@ -108,29 +112,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
-    },
-    {
-      "id": 1767786495363,
-      "name": "TDN Semarang",
-      "address": "Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50166",
-      "lat": -6.98914502687309,
-      "lng": 110.448043922826,
-      "marker": {
-        "type": "icon",
-        "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779328579_img_%25Toko%20Daging%20Nusantara%20Logo_%25e3f45685-8581-4cf1-ab52-4e356ba83ffd.png"
-      },
-      "businesses": [
-        {
-          "name": "TDN Semarang",
-          "category": "Toko Daging Nusantara",
-          "phone": "Tidak tersedia",
-          "description": "Toko Daging Nusantara - TDN Semarang",
-          "active": true
-        }
-      ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495364,
@@ -152,7 +135,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495365,
@@ -174,7 +158,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495366,
@@ -196,7 +181,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495367,
@@ -218,7 +204,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495368,
@@ -240,7 +227,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495369,
@@ -262,7 +250,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495370,
@@ -284,7 +273,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495371,
@@ -306,7 +296,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495372,
@@ -328,7 +319,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495373,
@@ -350,7 +342,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495374,
@@ -372,7 +365,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495375,
@@ -394,7 +388,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495376,
@@ -416,7 +411,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495377,
@@ -438,7 +434,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495378,
@@ -460,7 +457,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495379,
@@ -469,9 +467,9 @@
       "lat": -5.10797302037046,
       "lng": 119.5109164576717,
       "marker": {
-        "type": "icon",
+        "type": "color",
         "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622097798_img_%25Toko%20Daging%20Nusantara_%252f678a4d-c637-4eec-b82a-dc177ce77b52.png"
+        "icon": ""
       },
       "businesses": [
         {
@@ -482,7 +480,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "survey",
+      "status": "on-survey"
     },
     {
       "id": 1767786495380,
@@ -504,7 +503,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495381,
@@ -526,7 +526,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495382,
@@ -535,9 +536,9 @@
       "lat": -6.246360907279177,
       "lng": 107.06155664439133,
       "marker": {
-        "type": "icon",
+        "type": "color",
         "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622583388_img_%25Toko%20Daging%20Nusantara_%25fbed8e38-907b-4fc4-a61a-12a8a90d348f.png"
+        "icon": ""
       },
       "businesses": [
         {
@@ -548,7 +549,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "survey",
+      "status": "on-survey"
     },
     {
       "id": 1767786495383,
@@ -570,7 +572,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495384,
@@ -592,7 +595,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "operational",
+      "status": "active"
     },
     {
       "id": 1767786495385,
@@ -601,9 +605,9 @@
       "lat": -6.293538437381137,
       "lng": 106.81637675398302,
       "marker": {
-        "type": "icon",
+        "type": "color",
         "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622601926_img_%25Toko%20Daging%20Nusantara_%25fd5a35fb-79dd-4c48-a8c6-a6db9770a344.png"
+        "icon": ""
       },
       "businesses": [
         {
@@ -614,7 +618,8 @@
           "active": true
         }
       ],
-      "stage": "operational"
+      "stage": "survey",
+      "status": "on-survey"
     },
     {
       "id": 1767786495386,
@@ -623,9 +628,9 @@
       "lat": -6.1826470004907526,
       "lng": 106.78357672853592,
       "marker": {
-        "type": "icon",
+        "type": "color",
         "color": "#3388ff",
-        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/kingkinmhr/1767622608519_img_%25Toko%20Daging%20Nusantara_%254a532228-5a74-4760-ae5f-a6e25c0faca6.png"
+        "icon": ""
       },
       "businesses": [
         {
@@ -633,6 +638,29 @@
           "category": "Toko Daging Nusantara",
           "phone": "Tidak tersedia",
           "description": "Toko Daging Nusantara - TDN Tanjung Duren Grogol",
+          "active": true
+        }
+      ],
+      "stage": "survey",
+      "status": "on-survey"
+    },
+    {
+      "id": 1768360712950.667,
+      "name": "TDN Semarang",
+      "address": "Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50166",
+      "lat": -6.98914502687309,
+      "lng": 110.448043922826,
+      "marker": {
+        "type": "icon",
+        "color": "#3388ff",
+        "icon": "https://mapidstorage.s3.ap-southeast-1.amazonaws.com/general_image/anandadim/1756779328579_img_%25Toko%20Daging%20Nusantara%20Logo_%25e3f45685-8581-4cf1-ab52-4e356ba83ffd.png"
+      },
+      "businesses": [
+        {
+          "name": "TDN Semarang",
+          "category": "Toko Daging Nusantara",
+          "phone": "Tidak tersedia",
+          "description": "Toko Daging Nusantara - TDN Semarang",
           "active": true
         }
       ],

@@ -164,6 +164,16 @@ createApp({
             return stageMap[location.stage] || '';
         },
 
+        getStageMarkerColor(stage) {
+            const stageColorMap = {
+                survey: '#3388ff',
+                build: '#fd7e14',
+                permit: '#ffc107',
+                operational: '#28a745'
+            };
+            return stageColorMap[stage] || '#3388ff';
+        },
+
         updateMapMarkers() {
             // Clear existing markers
             this.markers.forEach(marker => {
@@ -261,18 +271,9 @@ createApp({
             }
 
             // Default marker (blue)
-            const defaultIcon = L.icon({
-                iconUrl: 'libs/leaflet/images/marker-icon.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowUrl: 'libs/leaflet/images/marker-shadow.png',
-                shadowSize: [41, 41],
-                shadowAnchor: [12, 41],
-                className: allBusinessesInactive ? 'custom-icon-inactive' : ''
-            });
-
-            return L.marker([location.lat, location.lng], { icon: defaultIcon });
+            const stageColor = this.getStageMarkerColor(location.stage);
+            const coloredIcon = this.createColoredMarker(stageColor, allBusinessesInactive);
+            return L.marker([location.lat, location.lng], { icon: coloredIcon });
         },
         
         createColoredMarker(color, isInactive = false) {
