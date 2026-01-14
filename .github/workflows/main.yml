@@ -2,9 +2,9 @@ name: NodeJS Test
 
 on:
   push:
-    branches: [ "dev", "main" ] # Sesuaikan dengan nama branch dev Anda
+    branches: [ "main" ] # Sesuaikan dengan nama branch dev Anda
   pull_request:
-    branches: [ "dev", "main" ]
+    branches: [ "main" ]
 
 jobs:
   test: # Nama job ini yang nanti dipilih di Branch Protection Rules
