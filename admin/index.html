@@ -148,6 +148,36 @@
             background: #e0a800;
         }
 
+        .progress-container {
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .progress-status {
+            margin-top: 0.5rem;
+            font-size: 14px;
+            color: #666;
+        }
+
         .locations-grid {
             display: grid;
             gap: 1rem;
@@ -427,7 +457,71 @@
                     </form>
                 </div>
             </div>
-            
+
+            <!-- Bulk Import CSV -->
+            <div class="card">
+                <div class="card-header">
+                    📥 Bulk Import dari CSV
+                </div>
+                <div class="card-body">
+                    <div v-if="importResult">
+                        <div :class="['alert', importResult.stats.errors.length > 0 ? 'alert-error' : 'alert-success']">
+                            <strong>Import Selesai!</strong><br>
+                            ✅ Ditambahkan: {{ importResult.stats.added }}<br>
+                            🔄 Diupdate: {{ importResult.stats.updated }}<br>
+                            ⏭️ Dilewati: {{ importResult.stats.skipped }}<br>
+                            ❌ Error: {{ importResult.stats.errors.length }}
+                            <div v-if="importResult.stats.errors.length > 0" style="margin-top: 0.5rem; font-size: 12px;">
+                                <strong>Detail Error:</strong>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                    <li v-for="(error, idx) in importResult.stats.errors" :key="idx">{{ error }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button @click="resetImport" class="btn btn-secondary">Import Lagi</button>
+                    </div>
+
+                    <div v-else>
+                        <div class="form-group">
+                            <label class="form-label">Upload File (CSV atau Excel)</label>
+                            <input
+                                type="file"
+                                class="form-input"
+                                accept=".csv,.xlsx,.xls"
+                                @change="handleFileUpload"
+                                ref="fileInput"
+                                :disabled="importing"
+                            >
+                            <div style="margin-top: 0.5rem; font-size: 12px; color: #666;">
+                                <strong>Format yang didukung:</strong> CSV (.csv), Excel (.xlsx, .xls)<br>
+                                <strong>Kolom yang dibutuhkan:</strong> TDN, Alamat, latitude, longitude, Icon, Status<br>
+                                <strong>Status yang didukung:</strong> Active, On-Survey, Development
+                            </div>
+                        </div>
+
+                        <!-- Progress Indicator -->
+                        <div v-if="importing" class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" :style="{ width: importProgress.percentage + '%' }">
+                                    {{ importProgress.percentage }}%
+                                </div>
+                            </div>
+                            <div class="progress-status">
+                                {{ importProgress.status }}
+                            </div>
+                        </div>
+
+                        <button
+                            @click="handleImport"
+                            class="btn btn-primary"
+                            :disabled="!importFile || importing"
+                        >
+                            {{ importing ? '⏳ Sedang Memproses...' : '📥 Import File' }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Locations List -->
             <div class="card">
                 <div class="card-header">
