@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@mapbox/mbtiles": "^0.12.1",
@@ -26,6 +27,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "webpack": "^5.88.2",
     "webpack-cli": "^6.0.1"
   }
 }
